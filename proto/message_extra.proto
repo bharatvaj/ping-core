@@ -1,0 +1,9 @@
+syntax = 'proto3';
+
+enum MessageExtraType {
+    NONE = 0;
+    DELETE_ME = 1;
+    DELETE_FOR = 2;
+    REPLIED_TO = 3;
+    MENTIONS = 4;
+}

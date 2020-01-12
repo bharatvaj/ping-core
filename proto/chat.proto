@@ -1,0 +1,8 @@
+syntax = 'proto3';
+
+import "message.proto";
+
+message Chat {
+    repeated int32 users = 1;
+    repeated Message messages = 2;
+}

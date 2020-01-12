@@ -1,0 +1,12 @@
+syntax = 'proto3';
+
+enum MessageStateType {
+    SENT = 0;
+    RECEIVED = 1;
+    SEEN = 2;
+}
+
+message MessageState {
+    int32 receiverId = 1;
+    MessageStateType type = 2;
+}

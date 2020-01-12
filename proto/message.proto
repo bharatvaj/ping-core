@@ -1,0 +1,24 @@
+syntax = 'proto3';
+
+import "message_state.proto";
+import "message_extra.proto";
+
+enum MessageType {
+    TEXT = 0; // markdown
+    BINARY = 1;
+    PICTURE = 2;
+    VIDEO = 3;
+    AUDIO = 4;
+    CALL = 5;
+}
+
+message Message {
+    int32 senderId = 1;
+    int32 id = 2;
+    MessageState state = 3;
+    // @todo use mime-type
+    MessageType type = 4;
+    repeated MessageExtraType extraTypes = 5;
+    string message = 6; // normal text message if type == TEXT, or link to resource if others
+    repeated int32 extraMessages = 7;
+}
